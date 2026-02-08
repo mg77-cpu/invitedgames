@@ -98,7 +98,7 @@ export function Pricing() {
   ];
 
   return (
-    <section className="bg-[#FAF9F6] py-24">
+    <section id="pricing" className="bg-[#FAF9F6] py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Header */}
         <div className="text-center mb-16">

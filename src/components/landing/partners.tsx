@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -43,22 +44,19 @@ export function Partners() {
 
       {/* Marquee Container */}
       <div className="relative w-full overflow-hidden">
-        {/* Gradient Masks */}
         <div className="absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent pointer-events-none" />
 
-        {/* Scrolling Track */}
         <motion.div
-          key="marquee-slow-400" // Force re-render
+          key="marquee-slow-400"
           className="flex gap-6 w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 400,
+            duration: 120,
           }}
         >
-          {/* Render partners twice for seamless loop */}
           {[...partners, ...partners].map((partner, index) => (
             <Card
               key={index}
@@ -81,12 +79,14 @@ export function Partners() {
       </div>
 
       <div className="mt-16 flex justify-center">
-        <Button
-          size="lg"
-          className="bg-[#D97706] hover:bg-[#B45309] text-white font-medium rounded-md px-8 h-12"
-        >
-          Become a Partner Club
-        </Button>
+        <Link href="/join">
+          <Button
+            size="lg"
+            className="bg-[#D97706] hover:bg-[#B45309] text-white font-medium rounded-md px-8 h-12"
+          >
+            Become a Partner Club
+          </Button>
+        </Link>
       </div>
     </section>
   );

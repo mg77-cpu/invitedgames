@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -29,12 +30,14 @@ export function CTAFooter() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <Button
-            size="lg"
-            className="bg-white text-[#013B26] hover:bg-gray-100 font-semibold px-8 h-12 w-full sm:w-auto"
-          >
-            Apply for Membership
-          </Button>
+          <Link href="/join">
+            <Button
+              size="lg"
+              className="bg-white text-[#013B26] hover:bg-gray-100 font-semibold px-8 h-12 w-full sm:w-auto"
+            >
+              Apply for Membership
+            </Button>
+          </Link>
           <Button
             size="lg"
             variant="outline"
